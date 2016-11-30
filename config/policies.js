@@ -50,5 +50,10 @@ module.exports.policies = {
 	// }
   UserController: {
     '*': ['isAdmin']
+  },
+
+  GenresController: {
+      '*': ['isAdmin']
   }
+
 };
