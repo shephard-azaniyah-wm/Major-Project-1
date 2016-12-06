@@ -54,6 +54,10 @@ module.exports.policies = {
 
   GenresController: {
       '*': ['isAdmin']
-  }
+  },
+
+    AlbumsController: {
+        '*': ['isAdmin']
+    }
 
 };

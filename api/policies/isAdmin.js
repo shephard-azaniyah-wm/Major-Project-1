@@ -5,6 +5,8 @@ module.exports = function (req, res, next) {
         return res.forbidden('No valid Authorize header passed.');
     }
 };
+
+// user-auth
 /**
  * Created by session1 on 11/18/16.
  */

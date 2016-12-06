@@ -1,7 +1,7 @@
 /**
- * UserController
+ * AlbumsController
  *
- * @description :: Server-side logic for managing users
+ * @description :: Server-side logic for managing albums
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
@@ -13,7 +13,7 @@ module.exports = {
     //        return res.badRequest('No id passed.');
     //    }
     //
-    //    User.update(id, {isEnabled: false}).exec(function (err, user) {
+    //    Genres.update(id, {isEnabled: false}).exec(function (err, user) {
     //        if (err) {
     //            res.serverError(err);
     //        }
@@ -21,8 +21,8 @@ module.exports = {
     //        return res.jsonx(user);
     //    });
     //},
-    vipOnly: function (req, res) {
-        User.find({vip: true}).exec(function (err, users) {
+    find: function (req, res) {
+        Albums.find().exec(function (err, users) {
             if (err) {
                 return res.serverError(err);
             }
@@ -30,9 +30,8 @@ module.exports = {
             return res.jsonx(users);
         });
     },
-
     delete: function (req, res) {
-        User.Remove({ id: req.params.user_id }, function(err) {
+        Albums.Remove({ id: req.params.user_id }, function(err) {
             if (!err) {
                 return res.send('User deleted!');
             } else {
@@ -40,5 +39,7 @@ module.exports = {
             }
         });
     }
+
 };
+
 
